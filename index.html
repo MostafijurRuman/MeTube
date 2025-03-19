@@ -24,15 +24,44 @@
       </style>
   
 </head>
-<body class="font-Inter">
+<body class="font-Inter w-11/12 mx-auto">
     <header>
         <nav>
+            <div class="navbar bg-base-100 ">
+                <div class="navbar-start">
+                  <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                    </div>
+                    <ul
+                      tabindex="0"
+                      class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                      <button class="btn ">Sort by view</button>
+                      
+                    </ul>
+                  </div>
+                  <a href="index.html"><img href="index.html" src="./assets/MeTube-Logo.png" alt=""></a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                  <ul class="menu menu-horizontal px-1">
+                    <button class="btn  font-medium text-[18px]">Sort by view</button>
+                    
+                  </ul>
+                </div>
+                <div class="navbar-end">
+                  <a class="btn bg-primary text-white font-medium text-[18px]">Blog</a>
+                </div>
+              </div>
+              <hr class="border-t-2 border-gray-300 my-2">
+        </nav>
+
+        <nav id="Categories-container" class=" flex justify-center gap-x-6 py-3 items-center ">
             
         </nav>
     </header>
 
-    <main>
-
+    <main id="videosContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 pt-5 pb-5 space-y-5 justify-items-center">
+        
     </main>
 
     <footer>
