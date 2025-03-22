@@ -27,9 +27,9 @@ const setActiveButton = (id) => {
     const buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {
         if (button.id === id) {
-            button.classList.add('btn-primary');
+            button.classList.add('bg-primary','text-white');
         } else {
-            button.classList.remove('btn-primary');
+            button.classList.remove('bg-primary','text-white');
         }
     });
 };
@@ -138,6 +138,51 @@ const loadVideo = (Videos) => {
 
     });
 }
+
+// Function to sort videos by views
+const sortByViews = () => {
+    // Step 1: Fetch the data from the API
+    fetch('https://openapi.programming-hero.com/api/phero-tube/videos')
+        .then(response => response.json())
+        .then(data => {
+            // Step 2: Parse the views and add a numericViews property to each video
+            data.videos.forEach(video => {
+                const viewsString = video.others.views;
+                let numericViews = 0;
+
+                if (viewsString.includes('K')) {
+                    numericViews = parseFloat(viewsString.replace('K', '')) * 1000;
+                } else if (viewsString.includes('M')) {
+                    numericViews = parseFloat(viewsString.replace('M', '')) * 1000000;
+                } else {
+                    numericViews = parseFloat(viewsString);
+                }
+
+                video.numericViews = numericViews;
+            });
+
+            // Step 3: Sort the videos in descending order based on numericViews
+            data.videos.sort((a, b) => b.numericViews - a.numericViews);
+
+            // Output the sorted array
+            console.log(data.videos);
+            loadVideo(data.videos);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+};
+
+document.getElementById("sortByViews").addEventListener("click", sortByViews)
+
+// Search Function
+document.getElementById('Search-input').addEventListener('keyup', input => {
+    const inputText = input.target.value;
+    fetch(`https://openapi.programming-hero.com/api/phero-tube/videos?title=${inputText}`)
+    .then(res => res.json())
+    .then(data => loadVideo(data.videos))
+});
+
+
+
 
 
 

@@ -24,8 +24,8 @@
       </style>
   
 </head>
-<body class="font-Inter w-11/12 mx-auto">
-    <header>
+<body class="font-Inter">
+    <header class=" w-11/12 mx-auto">
         <nav>
             <div class="navbar bg-base-100 ">
                 <div class="navbar-start">
@@ -44,32 +44,71 @@
                 </div>
                 <div class="navbar-center hidden lg:flex">
                   <ul class="menu menu-horizontal px-1">
-                    <button id="sortByViews" class="btn  font-medium text-[18px]">Sort by view</button>
+                    <button id="sortByViews" class="btn  font-medium text-[18px] btn-base">Sort by view</button>
                     
                   </ul>
                 </div>
                 <div class="navbar-end">
-                  <a class="btn bg-primary text-white font-medium text-[18px]">Blog</a>
+                    <div class="form-control">
+                      <div class="input-group flex gap-3">
+                        <input id="Search-input" type="text" placeholder="Search…" class="input input-bordered" />
+                        
+                      </div>
+                    </div>
                 </div>
               </div>
               <hr class="border-t-2 border-gray-300 my-2">
         </nav>
 
         <nav id="Categories-container" class=" flex justify-center gap-x-6 py-3 items-center ">
-            
+          
         </nav>
     </header>
 
-    <main id="videosContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 pt-5 pb-5 space-y-5 justify-items-center">
+    <main id="videosContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1 pt-5 pb-5 space-y-5 justify-items-center  w-11/12 mx-auto">
       
     </main>
-    <div id="videosContainer2">
+    <div id="videosContainer2" class=" w-11/12 mx-auto">
 
     </div>
   
 
-    <footer >
-        
+    <footer class="bg-base-200 text-base-content">
+      <div class="w-10/12 mx-auto">
+        <div class="footer p-10 grid grid-cols-2 md:grid-cols-4  bg-base-200 text-center">
+          <div class="mb-6 md:mb-0 pr-9">
+            <img src="./assets/MeTube-Logo.png" alt="MeTube Logo" class="w-24 mx-auto">
+            <p class="text-sm md:text-base">MeTube Inc.<br>Providing reliable video streaming since 2023. Our platform offers high-quality video content to users worldwide. Join us to revolutionize the way you watch and share videos online.</p>
+          </div> 
+          <div class="mb-6 md:mb-0">
+            <span class="footer-title text-lg md:text-xl">Services</span> 
+            <a class="link link-hover text-sm md:text-base">Streaming</a> 
+            <a class="link link-hover text-sm md:text-base">Upload</a> 
+            <a class="link link-hover text-sm md:text-base">Download</a> 
+            <a class="link link-hover text-sm md:text-base">Support</a>
+          </div> 
+          <div class="mb-6 md:mb-0">
+            <span class="footer-title text-lg md:text-xl">Company</span> 
+            <a class="link link-hover text-sm md:text-base">About us</a> 
+            <a class="link link-hover text-sm md:text-base">Contact</a> 
+            <a class="link link-hover text-sm md:text-base">Jobs</a> 
+            <a class="link link-hover text-sm md:text-base">Press kit</a>
+          </div> 
+          <div>
+            <span class="footer-title text-lg md:text-xl">Legal</span> 
+            <a class="link link-hover text-sm md:text-base">Terms of use</a> 
+            <a class="link link-hover text-sm md:text-base">Privacy policy</a> 
+            <a class="link link-hover text-sm md:text-base">Cookie policy</a>
+          </div>
+        </div>
+      
+        <div class="footer footer-center p-4 bg-base-200 text-base-content">
+          <div>
+            <p class="text-sm md:text-base font-bold">&copy; 2025 MeTube Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      
     </footer>
 
     <script src="./script.js"></script>
